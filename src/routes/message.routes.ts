@@ -2,7 +2,7 @@ import { Router } from 'express';
 import express from 'express';
 import { conversation, conversationList, messages, userMessages } from '@chat/controller/get.controller';
 import { message } from '@chat/controller/create.controller';
-import { markSingleMessage, offer, markMultipleMessages } from '@chat/controller/update.controller';
+import { markSingleMessage, offer, 'jobber-order-notification' } from '@chat/controller/update.controller';
 
 const router: Router = express.Router();
 
@@ -14,7 +14,7 @@ const messageRoutes = (): Router => {
   router.post('/', message);
   router.put('/offer', offer);
   router.put('/mark-as-read', markSingleMessage);
-  router.put('/mark-multiple-as-read', markMultipleMessages);
+  router.put('/mark-multiple-as-read', 'jobber-order-notification');
 
   return router;
 };
